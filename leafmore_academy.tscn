@@ -1,0 +1,138 @@
+[gd_scene format=3 uid="uid://cy72vnipqld5g"]
+
+[ext_resource type="PackedScene" uid="uid://cba36cvtncj55" path="res://player.tscn" id="1_rw24e"]
+[ext_resource type="Script" uid="uid://b0qiwsanai37j" path="res://game_manager.gd" id="2_134sk"]
+[ext_resource type="Script" uid="uid://4q4o0f7unyc6" path="res://plant_monster.gd" id="3_45w1e"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_m2g58"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m2g58"]
+albedo_color = Color(0.047058824, 0, 0.60784316, 1)
+metallic = 1.0
+roughness = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ykry"]
+albedo_color = Color(0.39912716, 0.4549688, 0.11204516, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m2g58"]
+radius = 0.6
+height = 2.2
+
+[node name="leafmore_academy" type="Node3D" unique_id=985353501]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 2)
+
+[node name="floor" type="CSGBox3D" parent="." unique_id=1995218623]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.099536896, -0.6325593)
+use_collision = true
+size = Vector3(15, 0.5, 15)
+
+[node name="Wall_North" type="CSGBox3D" parent="." unique_id=2113965463]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -7.5)
+use_collision = true
+size = Vector3(15, 4, 0.5)
+
+[node name="Wall_South" type="CSGBox3D" parent="." unique_id=1669151852]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 7.5)
+use_collision = true
+size = Vector3(15, 4, 0.5)
+
+[node name="Wall_East" type="CSGBox3D" parent="." unique_id=662669834]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 2, 0)
+use_collision = true
+size = Vector3(0.5, 4, 15)
+
+[node name="Wall_West" type="CSGBox3D" parent="." unique_id=442079509]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 2, 0)
+use_collision = true
+size = Vector3(0.5, 4, 15)
+
+[node name="Porta_Varco" type="CSGBox3D" parent="Wall_West" unique_id=978247692]
+operation = 2
+
+[node name="Floor_Chemical" type="CSGBox3D" parent="." unique_id=107942030]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5, -0.25, 0)
+use_collision = true
+size = Vector3(8, 0.5, 8)
+
+[node name="Doorway_Chemical" type="CSGBox3D" parent="." unique_id=1949129165]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 1.5, 0)
+operation = 2
+size = Vector3(2, 3, 2)
+
+[node name="Floor_Office" type="CSGBox3D" parent="." unique_id=1934471508]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, -0.25, 0)
+use_collision = true
+size = Vector3(9, 0.5, 8)
+
+[node name="Doorway_Office" type="CSGBox3D" parent="." unique_id=515693892]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 1.5, 0)
+operation = 2
+size = Vector3(2, 3, 2)
+
+[node name="Wall_Chem_north" type="CSGBox3D" parent="." unique_id=2145958089]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5, 2, -4)
+use_collision = true
+size = Vector3(8, 4, 8)
+
+[node name="Wall_Chem_West" type="CSGBox3D" parent="." unique_id=288593430]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5, 2, 0)
+use_collision = true
+size = Vector3(0.5, 4, 8)
+
+[node name="Wall_Chem_South" type="CSGBox3D" parent="." unique_id=119765361]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5, 2, 4)
+use_collision = true
+size = Vector3(8, 4, 0.5)
+
+[node name="Wall_Off_North" type="CSGBox3D" parent="." unique_id=2141777344]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 2, -4)
+use_collision = true
+size = Vector3(8, 4, 0.5)
+
+[node name="Wall_Off_East" type="CSGBox3D" parent="." unique_id=1499193230]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 2, 0)
+use_collision = true
+size = Vector3(0.5, 4, 8)
+
+[node name="Wall_Off_South" type="CSGBox3D" parent="." unique_id=1476910599]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 2, 4)
+use_collision = true
+size = Vector3(8, 4, 0.5)
+
+[node name="Locker" type="CSGBox3D" parent="." unique_id=1049960635]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 1.25, -3.5)
+use_collision = true
+size = Vector3(0.8, 2.5, 0.8)
+
+[node name="PistolItem" type="Area3D" parent="." unique_id=615519339]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0.3, -3)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PistolItem" unique_id=1488475504]
+shape = SubResource("SphereShape3D_m2g58")
+
+[node name="Pistolmesh" type="CSGBox3D" parent="PistolItem" unique_id=316192418]
+size = Vector3(0.1, 0.2, 0.3)
+material = SubResource("StandardMaterial3D_m2g58")
+
+[node name="Player" parent="PistolItem" unique_id=1207566633 instance=ExtResource("1_rw24e")]
+transform = Transform3D(-0.99522185, -0.097631566, -0.0012090374, 0.0976294, -0.99522126, 0.0017369185, -0.0013728323, 0.0016105868, 0.99999774, 14.741985, 1.1052895, 7.3566136)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1193570415]
+transform = Transform3D(0.19532382, 0.95731884, 0.21304746, 0.7331565, -0.28681365, 0.61661947, 0.65140635, 0.035756662, -0.75788605, -0.39501524, 0, 0)
+light_color = Color(1, 0.09803922, 1, 1)
+light_energy = 3.0
+
+[node name="GameManager" type="Node" parent="." unique_id=776271935]
+script = ExtResource("2_134sk")
+
+[node name="PlantMonster" type="CharacterBody3D" parent="." unique_id=1200596317]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.1, -4)
+script = ExtResource("3_45w1e")
+
+[node name="VisualMesh" type="CSGCylinder3D" parent="PlantMonster" unique_id=1811225553]
+radius = 0.6
+height = 2.2
+material = SubResource("StandardMaterial3D_8ykry")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlantMonster" unique_id=824286085]
+shape = SubResource("CapsuleShape3D_m2g58")

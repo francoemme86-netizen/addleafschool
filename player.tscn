@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cba36cvtncj55"]
+
+[ext_resource type="Script" uid="uid://cwy1veim7ohsj" path="res://player.gd" id="1_4flbx"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m2g58"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ykry"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_m2g58"]
+material = SubResource("StandardMaterial3D_8ykry")
+
+[node name="Player" type="CharacterBody3D" unique_id=1207566633]
+script = ExtResource("1_4flbx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1103365315]
+shape = SubResource("CapsuleShape3D_m2g58")
+
+[node name="CameraPivot" type="Node3D" parent="." unique_id=1627877706]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.7, 2.5)
+visibility_parent = NodePath("../MeshInstance3D")
+
+[node name="Flashlight" type="SpotLight3D" parent="CameraPivot" unique_id=1894072681]
+spot_range = 15.0
+spot_attenuation = 30.0
+spot_angle = 4.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=238128020]
+mesh = SubResource("CapsuleMesh_m2g58")
